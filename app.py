@@ -1,3 +1,10 @@
+# --- PARCHE PARA SQLITE EN STREAMLIT CLOUD ---
+# Debe estar en la parte SUPERIOR del script para que funcione.
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# ----------------------------------------------
+
 import streamlit as st
 import os
 from langchain_groq import ChatGroq
